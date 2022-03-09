@@ -39,7 +39,8 @@ export default class BasicCube {
 
     setMesh(): void {
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.mesh.position.y = 1 / 2;
+        // this.mesh.position.y = 1 / 2;
+        this.mesh.position.y = 3;
         this.scene.add(this.mesh);
     }
 }

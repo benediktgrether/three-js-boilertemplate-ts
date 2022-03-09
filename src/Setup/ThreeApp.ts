@@ -4,6 +4,8 @@ import Time from "./Utils/Time";
 import Camera from "./Camera";
 import Renderer from "./Renderer";
 import World from "./World/World";
+import CANNON from "cannon";
+import Physics from "./Utils/Physics";
 
 // tslint:disable-next-line: no-any
 let instance: any = null;
@@ -16,6 +18,8 @@ export default class ThreeApp {
     camera: Camera;
     renderer: Renderer;
     world: World;
+    cannonWorld: CANNON.World;
+    physics: Physics;
 
 
     constructor(_canvas?: HTMLCanvasElement) {
@@ -34,6 +38,8 @@ export default class ThreeApp {
         this.scene = new THREE.Scene();
         this.camera = new Camera();
         this.renderer = new Renderer();
+        this.cannonWorld = new CANNON.World();
+        this.physics = new Physics();
 
         this.world = new World();
 
@@ -55,6 +61,7 @@ export default class ThreeApp {
 
     update(): void {
         this.camera.update();
+        this.world.update();
         this.renderer.update();
     }
 }
