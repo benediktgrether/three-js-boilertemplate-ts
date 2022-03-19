@@ -48,6 +48,7 @@ export default class Floor {
     setMesh(): void {
         this.mesh = new THREE.Mesh(this.geometry, this.material);
         this.mesh.rotation.x = Math.PI / 2;
+        this.mesh.position.y = -2;
         this.scene.add(this.mesh);
     }
 
@@ -58,8 +59,7 @@ export default class Floor {
             shape: this.floorShape,
             material: this.defaultMaterial
         });
-        this.floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(-1, 0, 0), Math.PI * 0.5);
+        this.floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(-1, -2, 0), Math.PI * 0.5);
         this.cannonWorld.addBody(this.floorBody);
-        console.log(this.floorBody.position);
     }
 }
