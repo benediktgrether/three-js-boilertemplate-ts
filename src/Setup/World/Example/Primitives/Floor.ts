@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import ThreeApp from "../../ThreeApp";
+import ThreeApp from "../../../ThreeApp";
 import CANNON from "cannon";
-import Time from "../../Utils/Time";
+import Time from "../../../Utils/Time";
 
 export default class Floor {
     threeApp: ThreeApp;

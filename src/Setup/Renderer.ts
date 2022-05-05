@@ -5,9 +5,9 @@ export default class Renderer {
 
     threeApp: ThreeApp;
     canvas: HTMLCanvasElement | undefined;
-    sizes: import("/Users/bgr/Documents/three-js/three-js-boilertemplate-ts/src/Setup/Utils/Sizes").default;
+    sizes: import("./Utils/Sizes").default;
     scene: any;
-    camera: import("/Users/bgr/Documents/three-js/three-js-boilertemplate-ts/src/Setup/Camera").default;
+    camera: import("./Camera").default;
     instance: THREE.WebGLRenderer;
 
     constructor() {

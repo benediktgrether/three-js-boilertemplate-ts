@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import ThreeApp from "../../ThreeApp";
-import Time from "../../Utils/Time";
+import ThreeApp from "../../../ThreeApp";
+import Time from "../../../Utils/Time";
 
 export default class BasicCube {
     threeApp: ThreeApp;
@@ -39,8 +39,7 @@ export default class BasicCube {
 
     setMesh(): void {
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        // this.mesh.position.y = 1 / 2;
-        this.mesh.position.y = 3;
+        this.mesh.position.y = 1 / 2;
         this.scene.add(this.mesh);
     }
 }

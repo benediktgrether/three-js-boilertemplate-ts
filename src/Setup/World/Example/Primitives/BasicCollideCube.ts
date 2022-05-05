@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import CANNON from "cannon";
-import ThreeApp from "../../ThreeApp";
-import Time from "../../Utils/Time";
+import ThreeApp from "../../../ThreeApp";
+import Time from "../../../Utils/Time";
 
 export default class BasicCollideCube {
     threeApp: ThreeApp;

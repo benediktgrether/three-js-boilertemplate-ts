@@ -4,11 +4,12 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export default class Camera {
     threeApp: ThreeApp;
-    sizes: import("/Users/bgr/Documents/three-js/three-js-boilertemplate-ts/src/Setup/Utils/Sizes").default;
+
     scene: THREE.Scene;
     canvas: HTMLCanvasElement | undefined;
     instancen: any;
     controls: OrbitControls;
+    sizes: import("./Utils/Sizes").default;
 
 
     constructor() {
