@@ -59,7 +59,8 @@ export default class Floor {
             shape: this.floorShape,
             material: this.defaultMaterial
         });
-        this.floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(-1, -2, 0), Math.PI * 0.5);
+        this.floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(- 1, 0, 0), Math.PI * 0.5);
+        this.floorBody.position.y = this.mesh.position.y;
         this.cannonWorld.addBody(this.floorBody);
     }
 }

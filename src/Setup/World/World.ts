@@ -21,25 +21,27 @@ export default class World {
     constructor() {
         this.threeApp = new ThreeApp();
         this.scene = this.threeApp.scene;
-        this.resources = this.threeApp.resources;
         // this.resources = this.threeApp.resources;
 
         // Loaded Basic Cube
-        this.basicCube = new BasicCube();
-        //this.basicCollideCube = new BasicCollideCube();
+        // this.basicCube = new BasicCube();
+
+        //Physic
+        this.floor = new Floor();
+        this.basicCollideCube = new BasicCollideCube();
 
         //Wait for resources
-        this.resources.on("ready", () => {
-            this.foxFloor = new foxFloor();
-            this.fox = new Fox();
-            this.environment = new Environment();
-        });
+        // this.resources.on("ready", () => {
+        //     this.foxFloor = new foxFloor();
+        //     this.fox = new Fox();
+        //     this.environment = new Environment();
+        // });
     }
 
     update(): void {
-        //this.basicCollideCube.update();
-        if (this.fox) {
-            this.fox.update();
-        }
+        this.basicCollideCube.update();
+        // if (this.fox) {
+        //     this.fox.update();
+        // }
     }
 }

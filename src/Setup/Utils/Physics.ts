@@ -6,13 +6,19 @@ export default class Physics {
     cannonWorld: CANNON.World;
     defaultMaterial: CANNON.Material;
     defaultContactMaterial: CANNON.ContactMaterial;
+    broadphase: CANNON.SAPBroadphase;
+    allowSleep: boolean;
+
     constructor() {
         this.threeApp = new ThreeApp();
         this.cannonWorld = this.threeApp.cannonWorld;
         this.setPhysicVariables();
     }
+
     setPhysicVariables(): void {
         this.cannonWorld.gravity.set(0, -9.82, 0);
+        this.broadphase = new CANNON.SAPBroadphase(this.cannonWorld);
+        this.allowSleep = true;
         this.defaultMaterial = new CANNON.Material("default");
         this.defaultContactMaterial = new CANNON.ContactMaterial(
             this.defaultMaterial,
