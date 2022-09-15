@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 
 export default class Floor {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     resources: import("../../../Utils/Resources").default;
     geometry: THREE.CircleGeometry;
@@ -11,9 +11,9 @@ export default class Floor {
     mesh: THREE.Mesh<THREE.CircleGeometry, THREE.MeshStandardMaterial>;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.resources = this.threeApp.resources;
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.resources = this.app.resources;
 
         this.setGeometry();
         this.setTextures();

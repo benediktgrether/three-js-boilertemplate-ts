@@ -12,10 +12,9 @@ import Resources from "./Utils/Resources";
 
 import sources from "./sources";
 
-// tslint:disable-next-line: no-any
-let instance: any = null;
 
-export default class ThreeApp {
+export default class App {
+    static instance: App;
     canvas: HTMLCanvasElement | undefined;
     sizes: Sizes;
     time: Time;
@@ -32,11 +31,11 @@ export default class ThreeApp {
     constructor(_canvas?: HTMLCanvasElement) {
 
         // Singleton
-        if (instance) {
-            return instance;
+        if (App.instance) {
+            return App.instance;
         }
 
-        instance = this;
+        App.instance = this;
 
         this.canvas = _canvas;
 

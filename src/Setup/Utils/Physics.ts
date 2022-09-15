@@ -1,8 +1,8 @@
-import ThreeApp from "../ThreeApp";
+import App from "../App";
 import CANNON from "cannon";
 
 export default class Physics {
-    threeApp: ThreeApp;
+    app: App;
     cannonWorld: CANNON.World;
     defaultMaterial: CANNON.Material;
     defaultContactMaterial: CANNON.ContactMaterial;
@@ -10,8 +10,8 @@ export default class Physics {
     allowSleep: boolean;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.cannonWorld = this.threeApp.cannonWorld;
+        this.app = new App();
+        this.cannonWorld = this.app.cannonWorld;
         this.setPhysicVariables();
     }
 

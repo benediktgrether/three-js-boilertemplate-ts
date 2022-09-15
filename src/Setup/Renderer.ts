@@ -1,41 +1,41 @@
 import * as THREE from "three";
-import ThreeApp from "./ThreeApp";
+import App from "./App";
 
 export default class Renderer {
 
-    threeApp: ThreeApp;
+    app: App;
     canvas: HTMLCanvasElement | undefined;
     sizes: import("./Utils/Sizes").default;
-    scene: any;
     camera: import("./Camera").default;
-    instance: THREE.WebGLRenderer;
+    renderer: THREE.WebGLRenderer;
+    scene: THREE.Scene;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.canvas = this.threeApp.canvas;
-        this.sizes = this.threeApp.sizes;
-        this.scene = this.threeApp.scene;
-        this.camera = this.threeApp.camera;
+        this.app = new App();
+        this.canvas = this.app.canvas;
+        this.sizes = this.app.sizes;
+        this.scene = this.app.scene;
+        this.camera = this.app.camera;
 
         this.setInstance();
     }
 
     setInstance(): void {
-        this.instance = new THREE.WebGLRenderer({
+        this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true
         });
 
-        this.instance.setSize(this.sizes.width, this.sizes.height);
-        this.instance.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setSize(this.sizes.width, this.sizes.height);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio);
     }
 
     resize(): void {
-        this.instance.setSize(this.sizes.width, this.sizes.height);
-        this.instance.setPixelRatio(this.sizes.pixelRatio);
+        this.renderer.setSize(this.sizes.width, this.sizes.height);
+        this.renderer.setPixelRatio(this.sizes.pixelRatio);
     }
 
     update(): void {
-        this.instance.render(this.scene, this.camera.instancen);
+        this.renderer.render(this.scene, this.camera.camera);
     }
 }

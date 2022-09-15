@@ -1,5 +1,5 @@
-import ThreeApp from "./Setup/ThreeApp";
+import App from "./Setup/App";
 
 // tslint:disable-next-line: typedef
 // @ts-ignore
-const threeApp = new ThreeApp(document.querySelector("canvas.three-js-app") as HTMLCanvasElement);
+const app = new App(document.querySelector("canvas.three-js-app") as HTMLCanvasElement);

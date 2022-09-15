@@ -1,10 +1,10 @@
 import * as THREE from "three";
 import CANNON from "cannon";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 import Time from "../../../Utils/Time";
 
 export default class BasicCollideCube {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     time: Time;
     geometry: THREE.BoxGeometry;
@@ -17,11 +17,11 @@ export default class BasicCollideCube {
     defaultMaterial: CANNON.Material;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.time = this.threeApp.time;
-        this.cannonWorld = this.threeApp.cannonWorld;
-        this.defaultMaterial = this.threeApp.physics.defaultMaterial;
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.time = this.app.time;
+        this.cannonWorld = this.app.cannonWorld;
+        this.defaultMaterial = this.app.physics.defaultMaterial;
 
         this.setGeometry();
         this.setTexture();

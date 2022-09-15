@@ -1,4 +1,4 @@
-import ThreeApp from "../ThreeApp";
+import App from "../App";
 import BasicCollideCube from "./Example/Primitives/BasicCollideCube";
 import BasicCube from "./Example/Primitives/BasicCube";
 import Floor from "./Example/Primitives/Floor";
@@ -7,7 +7,7 @@ import Environment from "./Example/Model/Environment";
 import Fox from "./Example/Model/Fox";
 
 export default class World {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     basicCube: BasicCube;
     floor: Floor;
@@ -19,16 +19,16 @@ export default class World {
     fox: Fox;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        // this.resources = this.threeApp.resources;
+        this.app = new App();
+        this.scene = this.app.scene;
+        // this.resources = this.app.resources;
 
         // Loaded Basic Cube
-        // this.basicCube = new BasicCube();
+        this.basicCube = new BasicCube(0xffffff);
 
         //Physic
-        this.floor = new Floor();
-        this.basicCollideCube = new BasicCollideCube();
+        // this.floor = new Floor();
+        // this.basicCollideCube = new BasicCollideCube();
 
         //Wait for resources
         // this.resources.on("ready", () => {
@@ -39,7 +39,7 @@ export default class World {
     }
 
     update(): void {
-        this.basicCollideCube.update();
+        // this.basicCollideCube.update();
         // if (this.fox) {
         //     this.fox.update();
         // }

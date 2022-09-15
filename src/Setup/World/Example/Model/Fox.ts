@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 
 export default class Fox {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     resources: import("../../../Utils/Resources").default;
     debug: import("../../../Utils/Debug").default;
@@ -13,11 +13,11 @@ export default class Fox {
     resource: any;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.resources = this.threeApp.resources;
-        this.time = this.threeApp.time;
-        this.debug = this.threeApp.debug;
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.resources = this.app.resources;
+        this.time = this.app.time;
+        this.debug = this.app.debug;
 
         // Debug
         if (this.debug.active) {

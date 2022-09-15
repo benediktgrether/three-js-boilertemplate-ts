@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 
 export default class Environment {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     resources: import("../../../Utils/Resources").default;
     debug: import("../../../Utils/Debug").default;
@@ -11,11 +11,11 @@ export default class Environment {
     environmentMap: any;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.resources = this.threeApp.resources;
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.resources = this.app.resources;
 
-        this.debug = this.threeApp.debug;
+        this.debug = this.app.debug;
 
         // Debug
         if (this.debug.active) {

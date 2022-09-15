@@ -1,20 +1,23 @@
 import * as THREE from "three";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 import Time from "../../../Utils/Time";
 
 export default class BasicCube {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     time: Time;
     geometry: THREE.BoxGeometry;
     texture: {};
     material: THREE.MeshBasicMaterial;
     mesh: THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial>;
+    color: number;
 
-    constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.time = this.threeApp.time;
+    constructor(_color: number) {
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.time = this.app.time;
+
+        this.color = _color;
 
         this.setGeometry();
         this.setTexture();
@@ -31,10 +34,14 @@ export default class BasicCube {
     }
 
     setMaterial(): void {
+
+        console.log(this.color);
+
         this.material = new THREE.MeshBasicMaterial({
-            color: 0xffffff,
+            color: this.color,
             wireframe: false
         });
+        console.log("material: ", this.material);
     }
 
     setMesh(): void {

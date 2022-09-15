@@ -1,10 +1,10 @@
 import * as THREE from "three";
-import ThreeApp from "../../../ThreeApp";
+import App from "../../../App";
 import CANNON from "cannon";
 import Time from "../../../Utils/Time";
 
 export default class Floor {
-    threeApp: ThreeApp;
+    app: App;
     scene: THREE.Scene;
     time: Time;
     cannonWorld: CANNON.World;
@@ -17,11 +17,11 @@ export default class Floor {
     mesh: THREE.Mesh<THREE.PlaneGeometry, THREE.MeshBasicMaterial>;
 
     constructor() {
-        this.threeApp = new ThreeApp();
-        this.scene = this.threeApp.scene;
-        this.time = this.threeApp.time;
-        this.cannonWorld = this.threeApp.cannonWorld;
-        this.defaultMaterial = this.threeApp.physics.defaultMaterial;
+        this.app = new App();
+        this.scene = this.app.scene;
+        this.time = this.app.time;
+        this.cannonWorld = this.app.cannonWorld;
+        this.defaultMaterial = this.app.physics.defaultMaterial;
 
         // Setup Floor
         this.setGeometry();
